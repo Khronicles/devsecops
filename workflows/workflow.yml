@@ -1,0 +1,12 @@
+name: workflow_config
+
+on: 
+  push:
+    branches: [main]
+
+job: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
