@@ -5,18 +5,19 @@ on:
     branches: [main]
 
 jobs: 
-  build:
+  build-and-test:
     name: First Job
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout code
         uses: actions/checkout@v6
-        
-test:
-  name: second job
-  runs-on: ubuntu-latest
 
-  steps:
-    - name: print a statement
-      run: echo "second job."
+  test:
+    name: second job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print a statement
+        run: echo "second job."
+
