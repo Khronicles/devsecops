@@ -1,0 +1,41 @@
+name: three job structure
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [feature1]
+
+jobs:
+  build:
+    name: first job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: printing status
+        run: echo "building in progress"
+
+  test:
+    name: second job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: printing test status
+        run: echo "testing for errors"
+
+  deploy:
+    name: third job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+
+      - name: printing deployment status
+        run: echo "finally deployed"
